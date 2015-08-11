@@ -1,0 +1,8 @@
+Образец: happn.fr (слайдер)
+
+Параллакс:
+
+http://johnpolacek.github.io/scrolldeck.js/
+http://johnpolacek.github.io/scrolldeck.js/decks/parallax/
+
+

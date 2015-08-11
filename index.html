@@ -1,1 +1,287 @@
-Hello World
+<!DOCTYPE html>
+
+<html>
+
+<head>
+		<!-- BASICS -->
+        <meta charset="utf-8">
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+			</script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+		<![endif]-->
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Track a Truck</title>
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<!-- End of BASICS -->
+		<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="jquery-parallax-1.1.3/scripts/jquery.localscroll-1.2.7-min.js"></script>
+        <script type="text/javascript" src="jquery-parallax-1.1.3/scripts/jquery.scrollTo-1.4.2-min.js"></script>
+        <script type="text/javascript" src="jquery-parallax-1.1.3/scripts/jquery.parallax-1.1.3.js"></script>
+        <script type="text/javascript" src="jquery-parallax-1.1.3/scripts/jquery.inview.js"></script>
+
+    <!--parallax-->
+
+    <script type="text/javascript">
+        $(function(){
+            $('#games').parallax("10%", 0.1);
+        });
+    </script>
+
+
+    <!--Own slider-->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".slide-left").hide();
+            $(".slide").css("width", $(window).width());  
+        });
+
+        $(window).resize( function() {
+            var deti = $(".slider").children();
+            var shir = $(".active").width();
+            deti.each(function(entry, element){
+            if (!$(element).hasClass("active") && parseInt($(element).attr('num')) < parseInt($(element).parent().find(".active").attr('num'))) {
+                $(element).attr("style", "margin-left:-"+shir+"px");
+            }else{
+                $(element).attr("style", "margin-left:0px");
+            }
+            })
+             $(".slide").css("width", $(window).width());  
+        });
+
+        function sliderJSLeft (num, sl) {
+            var ul = $(sl);
+            var blockNow = $(sl).find("[num=" + num + "]");
+            var step = $(blockNow).width();
+            $(blockNow).animate({marginLeft: "-"+step}, 1000);
+        }
+
+        $(document).on("click", ".slide-right", function() {
+            var sl = $(this).parent().parent().find(".slider");
+            var idFirst = $($(sl).children()[0]).attr('num');
+            var idLast = $($(sl).children()[$(sl).children().length - 1]).attr("num");
+            var idNow = $($(sl).find(".active")).attr('num');
+            $(sl).find(".active").removeClass("active");
+                $(sl).find("[num=" + (parseInt(idNow) + 1) + "]").addClass("active");
+                sliderJSLeft(idNow, sl);
+            if(idNow == (idLast - 1)) {
+                $(this).hide();
+            }
+            $(this).parent().find(".slide-left").show();
+            if(idNow != idLast) {
+                $(this).parent().find(".slide-left").show();
+            }
+            return false;
+        });
+
+        function sliderJSRight (num, sl) {
+            var prevNum = num - 1;
+            var ul = $(sl);
+            var blockNow = $(sl).find("[num=" + prevNum + "]");
+            $(blockNow).animate({marginLeft: 0}, 1000);
+        }
+
+        $(document).on("click", ".slide-left", function() {
+            var sl = $(this).parent().parent().find(".slider");
+            var idFirst = $($(sl).children()[0]).attr('num');
+            var idLast = $($(sl).children()[$(sl).children().length - 1]).attr('num');
+            var idNow = $($(sl).find(".active")).attr('num');
+            $(sl).find(".active").removeClass("active");
+            if(idNow != idFirst){
+                $(sl).find("[num=" + (parseInt(idNow) - 1) + "]").addClass("active");
+                sliderJSRight(idNow, sl);
+            }
+            if(idNow == (parseInt(idFirst) + 1)) {
+                $(this).hide();
+            }
+            if(idNow != idFirst) {
+                $(this).parent().find(".slide-right").show();
+            }
+            return false;
+        });
+    </script>
+
+    <script type="text/javascript">  /* Menu Active Items */
+    $(function(){
+    	$('#games').bind('inview', function (event, visible) {
+		    if (visible == true) {
+		        $('a[href="#games"]').addClass("current");
+                $('a[href="#company"]').removeClass("current");
+                $('a[href="#support"]').removeClass("current");
+                $("header").removeClass("scrolled");
+
+		    }else{
+		        $(this).removeClass("inview");
+                $("header").addClass("scrolled");
+		    }
+		});
+		$('#company').bind('inview', function (event, visible) {
+		    if (visible == true) {
+                $('a[href="#company"]').addClass("current");
+		        $('a[href="#games"]').removeClass("current");                
+                $('a[href="#support"]').removeClass("current");
+		    }else{
+		      $(this).removeClass("inview");
+		    }
+		});
+		$('#support').bind('inview', function (event, visible) {
+		    if (visible == true) {
+                $('a[href="#support"]').addClass("current");		    	
+                $('a[href="#company"]').removeClass("current");
+                $('a[href="#games"]').removeClass("current");
+		    }else{
+		      $(this).removeClass("inview");
+		    }
+		});
+    });
+    </script>
+    <!---->
+		<script type="text/javascript">  /* Opening the Navbar */
+			function navbar() {
+				var a=document.getElementById('main-container');
+				if (a.className.match("opened")) {
+					a.className="";
+				}
+				else {
+					a.className="opened";
+				}
+			}
+			
+			var app = { /* Nice scrolling */
+				scrolled: 0,
+				newPosition: 0,
+				interval: null,
+				speed: 0,
+
+				scrollTo: function(el) {
+					var link = el.getAttribute('href').replace('#', ''),
+						anchor = document.getElementById(link);
+
+					var location = 0;
+					if (anchor.offsetParent) {
+						do {
+							location += anchor.offsetTop;
+							anchor = anchor.offsetParent;
+						} while (anchor);
+					}
+					location = location >= 0 ? location : 0;
+
+					this.animateScroll(location);
+					return false;
+				},
+
+				animateScroll: function(pos) {
+					document.documentElement.scrollTop = 1;
+					var element = (document.documentElement && document.documentElement.scrollTop) ? document.documentElement : document.body,
+						start = element.scrollTop,
+						change = pos - start,
+						currentTime = 0,
+						increment = 30,
+						duration = 700;
+
+					var animateScroll = function(){        
+						currentTime += increment;
+						var val = Math.easeInOutQuad(currentTime, start, change, duration);
+						element.scrollTop = val;
+						if(currentTime < duration) {
+							setTimeout(animateScroll, increment);
+						}
+					};
+					animateScroll();
+				}
+			};
+
+			Math.easeInOutQuad = function (t, b, c, d) {
+				t /= d/2;
+				if (t < 1) return c/2*t*t + b;
+				t--;
+				return -c/2 * (t*(t-2) - 1) + b;
+			};
+		</script>
+
+</head>
+
+<body>
+
+	<header>
+		<a class="menu-btn mobile" onClick="navbar()" href="#"></a>
+		<a class="logo-header"></a>
+	</header>
+	
+	<nav class="nav">
+		<div id="shadow"></div>
+		<a class="btn-green mobile" href="#">Games</a>
+		<div class="line mobile"></div>
+		<a onclick="return app.scrollTo(this)" class="current" href="#games">Games</a>
+		<a onclick="return app.scrollTo(this)" href="#company">Company</a>
+		<a onclick="return app.scrollTo(this)" href="#support">Support</a>
+		<div class="line mobile"></div>
+	</nav>
+
+	<div id="main-container">
+		<br>
+		<br>
+		<br>
+		<div id="games" class="page">
+			<div class="slide-container">
+				<ul class="slider">
+					<li class="slide active" num="1"> <!-- Slide 1 -->
+						<div class="phone-pic">
+							<img src="images/iphone-map.png">
+						</div>
+					</li>
+					<li class="slide" num="2"> <!-- Slide 2 -->
+						<div class="phone-pic">
+							<img src="images/iphone-status.png">
+						</div>
+					</li>
+					<li class="slide" num="3"> <!-- Slide 3 -->
+						<div class="phone-pic">
+							<img src="images/iphone-details.png">
+						</div>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="controls">
+				<a href="#" class="slide-left"></a>
+				<a href="" class="slide-right"></a>
+			</div>
+		</div>
+		<div id="company" class="page">
+			<div class="table">
+				<div class="table-cell">
+					<h1>Company</h1>
+					<p>Block about company</p>
+				</div>
+			</div>
+		</div>
+		
+		<div id="support" class="page">
+			<div class="table">
+				<div class="table-cell">
+					<h1>Contact Us</h1>
+					<a href="mailto:@vladimir.hudnitsky@gmail.com"> Support Email: vladimir.hudnitsky@gmail.com</a>
+				</div>
+			</div>
+			<footer>
+				<h3>Track a Truck is available for free on iPhone.</h3>
+				<ul class="download-btns">
+					<li><a class="appstore" href="#"></a></li>
+				</ul>
+				<ul class="footer-menu">
+					<li><a href="#">Terms and conditions</a></li>
+				</ul>
+			</footer>
+		</div>
+
+	</div><!-- End of main-container -->
+	
+</body>
+
+</html>
