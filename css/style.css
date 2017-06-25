@@ -143,10 +143,14 @@ button {width: auto; overflow: visible;}
  1) Basic Styles
 --------------------------------*/
 
+.direct-link{
+  color:#c5db3b;
+}
+
 body { font-family: 'Open Sans', sans-serif; font-weight: 400; background-color: #302429;
 /*background: url('../css/images/placeholders/home.jpg') no-repeat center top; opacity: 0.9*/}
 
-body, select, input, textarea {color: #333;}
+body, select, input, textarea {color: #eee;}
 
 a {color: #03f; text-decoration: none;}
 a:hover {color: #fff;}
