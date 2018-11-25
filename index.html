@@ -1,241 +1,528 @@
 <!doctype html>
-
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 
 <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<title>Redeyes Dev</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="vendors/animate-css/animate.css">
+	<link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
 
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>GameDevs Theme</title>
-  
-  <meta name="title" content="">
-  <meta name="description" content="">
-  
-  <meta name="google-site-verification" content=""> <!-- http://google.com/webmasters -->
-
-  <meta name="author" content="Redeyes Dev">
-  <meta name="Copyright" content="Copyright Redeyes Dev 2012. All Rights Reserved.">
-
-  <link rel="shortcut icon" href="favicon.ico">
-
-  <link rel="stylesheet" href="css/mosaic.css">
-  <!--Main Stylesheet-->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy|Bitter:700|Open+Sans:400,600,600italic' rel='stylesheet' type='text/css'>
-  <!--Load Modernizr, all other scripts are on the footer-->
-  <script src="js/modernizr-1.7.min.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-66894114-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBW5EcA6MsOiAan1Uesx5xvtG-SDH_Qv0A",
+	    authDomain: "redeyes-web.firebaseapp.com",
+	    databaseURL: "https://redeyes-web.firebaseio.com",
+	    projectId: "redeyes-web",
+	    storageBucket: "",
+	    messagingSenderId: "623777085233"
+	  };
+	  firebase.initializeApp(config);
+  </script>
 </head>
 
-<body id="homepage">
+<body>
 
-<!--Header Section-->
-<header>
-  <div class="container_16 clearfix">
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav justify-content-center">
+							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Products</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="apps.html">Apps & Tools</a>
+									<li class="nav-item"><a class="nav-link" href="games.html">Games</a>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="nav-item"><a href="games.html" class="primary_btn">Games</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
 
-      <h1 class="grid_7" id="logo"><a href="#"><img src="css/images/logo.png" alt="" width="310" height="62"/></a></h1>
+	<!--================Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="home_left_img">
+							<img class="img-fluid" src="img/banner/home-left.png" alt="">
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="banner_content">
+							<h2>
+								Not Just Building <br>
+								Apps and Games <br>
+								But Creating a Mood
+							</h2>
+							<p>
+								In order for your life to be complete you must satisfy your inner adult but also your inner child. <br>
+Our goal is to make useful and necessary applications for your inner adult and cool games for your inner child.
+							</p>
+							<div class="d-flex align-items-center">
+								<a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?v=UQI9u66BowE">
+									<span></span>
+								</a>
+								<div class="watch_video text-uppercase">
+									watch the video
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Home Banner Area =================-->
 
-      <nav id="main_nav" class="bitter grid_9">
-        <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="2-games.html">Products</a></li>          
-          <li><a href="4-about.html">About</a></li>
-          <li><a href="5-contact.html">Contact</a></li>
-        </ul>
-      </nav>
+	<!--================First Games Area =================-->
+	<section class="upcoming_games_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<h2>Games</h2>
+						<h1>Games</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="img/b_map1.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="https://play.google.com/store/apps/details?id=com.redeyes.twistofwrist.android2">TOW: Bear's Dungeon Android</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="img/b_map2.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="games.html">TOW: Bear's Dungeon iPhone</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="img/b_map3.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="games.html">I Hate Bears Android</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="new_games_item">
+						<img src="img/b_map4.png" alt="">
+						<div class="upcoming_title">
+							<h3><a href="games.html">I Hate Bears iPhone</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Games Area =================-->
 
-  </div><!--//container-->
-</header>
-<!--//Header Section-->
+	<!--================Start Recent Update Area =================-->
+	<section class="recent_update_area section_gap">
+		<div class="container">
+			<div class="recent_update_inner">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="upcoming_games-tab" data-toggle="tab" href="#upcoming_games" role="tab" aria-controls="upcoming_games" aria-selected="true">
+							Upcoming
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="recent_games-tab" data-toggle="tab" href="#recent_games" role="tab" aria-controls="recent_games"
+						 aria-selected="false">
+							Recent Updates
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane show active" id="upcoming_games" role="tabpanel" aria-labelledby="upcoming_games-tab">
+						<div class="row recent_update_text">
+							<div class="col-lg-4">
+								<div class="chart_img">
+									<img class="img-fluid" src="img/recent_tow_iphone.png" alt="">
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="section_content">
+									<h6>About</h6>
+									<h1>TOW: Bear's Dungeon <br>Coming on iPhone</h1>
+									<p>Features:<br>
+  										- Unique levels. Levels are created based on your skill which will never bored you.<br>
+   										- Achievements. More than 30 achievements, which can be obtained by one or more conditions.<br>
+  										- Hall of Fame. Follow your friends and  do not let them get ahead! Show the world that you’re the best.<br>
+											</p>
+									<a class="primary_btn" href="#">Learn More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="recent_games" role="tabpanel" aria-labelledby="recent_games-tab">
+						<div class="row recent_update_text">
+							<div class="col-lg-4">
+								<div class="chart_img">
+									<img class="img-fluid" src="img/update_tow_android.png" alt="">
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="section_content">
+									<h6>About</h6>
+									<h1>TOW: Bear's Dungeon <br>Android v1.2.2 Released</h1>
+									<p>
+										The biggest update in last 2 years with a lot of improvements: <br>
+										- Fixed balance on the game. <br>
+										- Complexity level increase periodically with a random intervals. <br>
+										- Fixed animations. <br>
+										- Added ability to resurect after first death. <br>
+										- Added video with a story about Sir and how did he got to the Bear's Dungeon.
+									</p>
+									<a class="primary_btn" href="https://play.google.com/store/apps/details?id=com.redeyes.twistofwrist.android2">Try It Out</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Recent Update Area =================-->
 
+	<!--================First Apps Area =================-->
+	<section class="upcoming_games_area section_gap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="main_title">
+							<h2>Apps & Tools</h2>
+							<h1>Apps & Tools</h1>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="new_games_item">
+							<img src="img/smart_camera_map1.png" alt="">
+							<div class="upcoming_title">
+								<h3><a href="games.html">Smart Camera for Android</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="new_games_item">
+							<img src="img/simple_camera_map2.png" alt="">
+							<div class="upcoming_title">
+								<h3><a href="games.html">Simple Camera for Android</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="new_games_item">
+							<img src="img/passman_map3.png" alt="">
+							<div class="upcoming_title">
+								<h3><a href="games.html">PassMan for iPhone</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="new_games_item">
+							<img src="img/whereau_map4.png" alt="">
+							<div class="upcoming_title">
+								<h3><a href="games.html">iMessage Extensions</a></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!--================End Apps Area =================-->
 
-<div class="slider">
-  <div class="slide slide-1">
-    <img src="css/images/placeholders/slider_1.jpg" alt=""/>
-    <div class="cta_text bitter">
-      <p>
-        <span>Обновление Passman 1.2</span>
-      </p>        
-      <p>
-        <span>Теперь мы поддерживаем русский язык</span><br/>
-      </p>
-      <a href="#" class="cta_btn luck">Скачать<br/><span class="osans">для iPhone</span></a>
-    </div>
-  </div>
-  <div class="slide slide-2" style="display: none;">
-    <img src="css/images/placeholders/slider_2.jpg" alt=""/>
-    <div class="cta_text bitter">
-      <p>
-        <span>Passman Update!</span>
-      </p>
-      <p>
-        <span>We've heard your feedback and made several tweaks to make your life even easier.</span><br/>
-      </p>
-      <a href="#" class="cta_btn luck">Try Passman!<br/><span class="osans">for iPhone</span></a>
-    </div>
-  </div>
-  <!-- <div class="slide slide-3">
-    <img src="css/images/placeholders/slider_3.jpg" alt=""/>
-    <div class="cta_text bitter">
-      <p>
-        <span>New Update on The Way!</span>
-      </p>
-      <p>
-        <span></span>
-      </p>
-    </div>
-  </div> -->
-</div>
+	<!--================Start Recent Update Area =================-->
+	<section class="recent_update_area section_gap">
+		<div class="container">
+			<div class="recent_update_inner">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="upcoming_apps-tab" data-toggle="tab" href="#upcoming_apps" role="tab" aria-controls="upcoming_apps" aria-selected="true">
+							Upcoming
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="recent_apps-tab" data-toggle="tab" href="#recent_apps" role="tab" aria-controls="recent_apps"
+						 aria-selected="false">
+							Recent Updates
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane show active" id="upcoming_apps" role="tabpanel" aria-labelledby="upcoming_apps-tab">
+						<div class="row recent_update_text">
+							<div class="col-lg-4">
+								<div class="chart_img">
+									<img class="img-fluid" src="img/upcoming_passman.png" alt="">
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="section_content">
+									<h6>About</h6>
+									<h1>Secure passwords keeper <br>Coming on iPhone</h1>
+									<p>
+										PassMan store passwords in a secure internal storage on your iPhone and never sends them to the internet, neither to iCloud, nor to any other device. Your passwords won't be hijacked.
+									</p>
+									<a class="primary_btn" href="#">Learn More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="recent_apps" role="tabpanel" aria-labelledby="recent_apps-tab">
+						<div class="row recent_update_text">
+							<div class="col-lg-4">
+								<div class="chart_img">
+									<img class="img-fluid" src="img/recent_smart_camera.png" alt="">
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="section_content">
+									<h6>About</h6>
+									<h1>Smart Camera <br>Android v3.1.0 Released</h1>
+									<p>
+										The biggest update in last 2 years with a lot of improvements: <br>
+										- Support Android 8. <br>
+										- Removed Location permission. <br>
+										- Enable zoom on camera by pinch. <br>
+										- Removed annoying ads from camera view.<br>
+										- added auto stabilisation on our camera, now all photos will be clearer.
+									</p>
+									<a class="primary_btn" href="https://play.google.com/store/apps/details?id=com.SmartCamera">Try It Out</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Recent Update Area =================-->
 
-<div id="sep_bg"></div>
+	<!--================ Start Gallery Area =================-->
+	<section class="gallery_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<h2>Screens Gallery</h2>
+						<h1>Screens Gallery</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="single-gallery">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="img/gallery_img1.png" alt="">
+								<div class="content">
+									<a class="pop-up-image" href="img/gallery_img1.png">
+										<i class="lnr lnr-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<div class="single-gallery">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="img/gallery_img2.png" alt="">
+								<div class="content">
+									<a class="pop-up-image" href="img/gallery_img2.png">
+										<i class="lnr lnr-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="single-gallery">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="img/gallery_img3.png" alt="">
+								<div class="content">
+									<a class="pop-up-image" href="img/gallery_img3.png">
+										<i class="lnr lnr-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 hidden-md hidden-sm">
+					<div class="single-gallery">
+						<div class="overlay"></div>
+						<img class="img-fluid w-100" src="img/gallery_img4.png" alt="">
+						<div class="content">
+							<a class="pop-up-image" href="img/gallery_img4.png">
+								<i class="lnr lnr-eye"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="single-gallery">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="img/gallery_img5.png" alt="">
+								<div class="content">
+									<a class="pop-up-image" href="img/gallery_img5.png">
+										<i class="lnr lnr-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="single-gallery">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="img/gallery_img6.png" alt="">
+								<div class="content">
+									<a class="pop-up-image" href="img/gallery_img6.png">
+										<i class="lnr lnr-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="single-gallery">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="img/gallery_img7.png" alt="">
+								<div class="content">
+									<a class="pop-up-image" href="img/gallery_img7.png">
+										<i class="lnr lnr-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Gallery Area =================-->
 
-<section id="main">
-  <div class="container_16 clearfix">
+	<!--================ Start Newsletter Area ================-->
+	<section class="newsletter_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="newsletter_inner">
+						<h1>Subscribe Our Newsletter</h1>
+						<p>We won’t send any kind of spam</p>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<aside class="newsletter_widget">
+						<div id="mc_embed_signup">
+							<form target="_blank" action="https://redeyes-dev.us19.list-manage.com/subscribe/post?u=952d87faa11e19bcabfc16a52&amp;id=e6cb70ffee" id="mc-embedded-subscribe-form"
+							 method="post" class="subscribe_form relative">
+								<div class="input-group d-flex flex-row">
+									<input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
+									 required="" type="email" id="newsletter_input">
+									<button class="btn primary_btn" id="newsletter_subscribe_btn">Subscribe</button>
+								</div>
+							</form>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Newsletter Area ================-->
 
-    <article class="about grid_16">
-      <h2 class="luck">About Redeyes Dev</h2>
-      <p class="grid_8 alpha omega">Mobile Developer Company</p>
-      <!-- <p class="grid_8">We are doing awesome mobile apps and games<a href="#" class="osans-s">Read More &rsaquo;</a></p> -->
-    </article>
+	<!--================Footer Area =================-->
+	<footer class="footer_area section_gap_top">
+		<div class="container">
+			<div class="row single-footer-widget">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="copy_right_text">
+						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="social_widget">
+						<a href="https://www.facebook.com/profile.php?id=100005556767352"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.instagram.com/lowpolymodelsstudio/"><i class="fa fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--================End Footer Area =================-->
 
-    <div class="clear"></div><div class="big_sep"></div><div class="clear"></div>
-
-    <div id="featured" class="grid_9">
-      <article>
-        <h2 class="luck">Featured Games</h2>
-
-        <div class="mosaic-block bar">
-          <a href="#" class="mosaic-overlay"></a>
-          <div class="mosaic-backdrop"><iframe width="300" height="290" scrolling="no" frameborder="0" style="margin:0;padding:0" src="http://slideme.org/widgets/app/15229426/normal_dark">Get the <a href="http://slideme.org/application/ihatebears">IHateBears</a> Android app from <a href="http://slideme.org/">SlideME</a>.</iframe><div style="margin:-5px 0;padding:0;font-size:small">Get the <a href="http://slideme.org/application/ihatebears">IHateBears</a> Android app from <a href="http://slideme.org/">SlideME</a>.</div></div>
-        </div>
-        <!-- <h6 class="luck"><a href="#">Lorem Ipsum is Simply a Headline</a></h6>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
- -->
-        <!-- <div class="mosaic-block bar">
-          <a href="#" class="mosaic-overlay"></a>
-          <div class="mosaic-backdrop"><img src="css/images/placeholders/featured_2.jpg" alt="" width="529" height="240"/></div>
-        </div>
-        <h6 class="luck"><a href="#">Again, just a headline</a></h6>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
- -->
-      </article>
-    </div>
-
-    <!-- <aside id="blog_notes" class="grid_7">
-      <header><h2 class="luck">Blog Notes</h2></header>
-      <div class="blog_entries">
-        <div class="entry">
-          <p class="date luck">Sep<br/><span>07</span></p>
-          <div class="article_preview">
-            <h2 class="luck"><a href="#">Lorem Ipsum is simply dummy text</a></h2>
-            <p class="entry_text osans-s">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <a href="#" class="osans-i">Read More &rsaquo;</a>
-          </div>
-        </div>
-        <div class="entry">
-          <p class="date luck">Sep<br/><span>01</span></p>
-          <div class="article_preview">
-            <h2 class="luck"><a href="#">New Game Released!</a></h2>
-            <p class="entry_text osans-s">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <a href="#" class="osans-i">Read More &rsaquo;</a>
-          </div>
-        </div>
-        <div class="entry">
-          <p class="date luck">Aug<br/><span>25</span></p>
-          <div class="article_preview">
-            <h2 class="luck"><a href="#">Game Update Available</a></h2>
-          <p class="entry_text osans-s">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          <a href="#" class="osans-i">Read More &rsaquo;</a>
-          </div>
-        </div>
-      </div>
-      <div class="clear"></div>
-      <div id="twitter_feed">
-        <div class="t_icon"></div>
-        <div class="t_text">
-          <a class="twitter-timeline" data-chrome="noheader nofooter noborders transparent" width="250" height="100" data-tweet-limit="1" data-dnt="true" href="https://twitter.com/jalberto13" data-widget-id="348068464663080960">Tweets by @jalberto13</a>
-
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-      </div>
-
-    </aside>
- -->
-  </div><!--container_16-->
-</section>
-
-
-<footer class="osans-s">
-  <div class="container_16 clearfix">
-    <div class="grid_3"><a href="#" id="logo_small"><img src="css/images/logo_footer.png" alt="GameDevs Logo"/></a></div>
-
-    <div class="grid_5">
-      <ul id="menu_bottom">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>        
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="grid_4" id="social">
-      <ul>
-        <li><a class="tw" href="#">Twitter</a></li>
-        <li><a class="fb" href="#">Facebook</a></li>
-        <li><a class="gp" href="#">Google Plus</a></li>
-      </ul>
-    </div>
-
-    <div class="grid_4 copy">
-      <p>Copyright GameDevs <span class="date"></span>. All Rights Reserved.</p>
-    </div>
-    <div class="grid_4 copyright">      
-      </div>
-  </div>
-</footer>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='js/jquery-1.8.2.min.js'>\x3C/script>")</script>
-
-
-<script src="js/jquery.watermark.min.js"></script>
-<script src="js/mosaic.1.0.1.min.js"></script>
-<!-- Our custom functions -->
-<script src="js/functions.js"></script>
-
-<!-- Asynchronous google analytics; this is the official snippet.
-   Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
-   
-<script>
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
--->
-  
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="vendors/isotope/isotope-min.js"></script>
+	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+	<script src="vendors/counter-up/jquery.counterup.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="js/gmaps.min.js"></script>
+	<script src="js/theme.js"></script>
+	<script>
+		$("#newsletter_subscribe_btn").click(function() {
+			alert("Thank you for subscription!");
+			$("#newsletter_input")[0].value = "";
+		});
+	</script>
 </body>
+
 </html>
